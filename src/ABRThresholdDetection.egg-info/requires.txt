@@ -1,0 +1,12 @@
+jupyterlab
+pandas
+statsmodels
+scipy
+scikit-learn
+autopep8
+matplotlib
+seaborn
+progressbar2
+pingouin
+more-itertools
+tensorflow==1.15
