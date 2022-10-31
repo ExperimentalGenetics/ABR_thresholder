@@ -47,9 +47,6 @@ def _prepare_thresholds_for_evaluation(data, db_buffer, sound_level='sound_level
         data.loc[data['mouse_id'] == mouse, threshold_cleaned] = max(minsl, data.loc[
             data['mouse_id'] == mouse, threshold_cleaned].max())
 
-    # print('data after cleaned:')
-    # print(data[['mouse_id', sound_level, threshold, threshold_cleaned]])
-
     return data
 
 
@@ -232,7 +229,7 @@ def _generate_evaluation_curve(data, thresholds, time_series, sound_level='sound
             
         thresholds : string or int
             Name of column with thresholds in data.
-            Columns names where the thresholds are stored for which the evaluation
+            Column names where the thresholds are stored for which the evaluation
             should be computed. If int, then a constant threshold with this value is used.
             
         time_series : list of strings
@@ -246,7 +243,7 @@ def _generate_evaluation_curve(data, thresholds, time_series, sound_level='sound
         subthsignal_strength : numpy array shape (Number of ABR waves)
             Strength of signal average over the N ABR-curves with smallest threshold_normalized_sound_level.
         N : numpy array shape (Number of ABR waves)
-            The correstponding number of ABR-curves with smallest threshold_normalized_sound_level.
+            The corresponding number of ABR-curves with smallest threshold_normalized_sound_level.
     """
 
     if type(thresholds) is str:
